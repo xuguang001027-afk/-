@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#5065d6">
+  <meta name="description" content="陪伴成长一年半｜宝贝的编程进阶之路">
+  <title>陪伴成长一年半｜宝贝的编程进阶之路</title>
+  <style>
+    :root{--ink:#233053;--muted:#687394;--blue:#4d74e6;--purple:#8265dc;--soft:#eef3ff;--card:#fff;--warm:#fff8e8;--line:#dfe6fb;--shadow:0 18px 44px rgba(57,73,137,.13)}
+    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;color:var(--ink);font-family:"PingFang SC","Microsoft YaHei",system-ui,sans-serif;background:linear-gradient(180deg,#eef3ff 0,#fbfaff 28%,#fff 70%,#f3f6ff 100%);line-height:1.75;letter-spacing:.02em}
+    body:before{content:"";position:fixed;inset:0;pointer-events:none;opacity:.55;background-image:radial-gradient(circle at 18% 9%,rgba(100,139,247,.22) 0 2px,transparent 3px),radial-gradient(circle at 86% 18%,rgba(145,101,221,.18) 0 3px,transparent 4px);background-size:80px 80px,110px 110px}
+    .progress{position:fixed;z-index:20;left:0;top:0;width:100%;height:4px;background:rgba(255,255,255,.55)}.progress i{display:block;width:0;height:100%;background:linear-gradient(90deg,#4c8cf4,#9064dd)}
+    .wrap{position:relative;width:min(100%,560px);margin:auto;padding:0 18px 64px}.hero{position:relative;min-height:92svh;margin:0 -18px 24px;padding:70px 24px 38px;display:flex;flex-direction:column;justify-content:center;overflow:hidden;color:#fff;background:linear-gradient(145deg,#426bd9 0%,#675ed6 54%,#9166d7 100%);border-radius:0 0 38px 38px;box-shadow:var(--shadow)}
+    .hero:after{content:"";position:absolute;width:260px;height:260px;border:42px solid rgba(255,255,255,.08);border-radius:50%;right:-130px;top:-95px}.eyebrow{width:max-content;padding:7px 13px;border-radius:999px;background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.28);font-size:13px;font-weight:700}.hero h1{position:relative;z-index:1;margin:22px 0 14px;font-size:clamp(35px,10vw,51px);line-height:1.14;letter-spacing:.01em}.hero h1 span{display:block;color:#ffeca8}.hero p{margin:0;max-width:440px;font-size:17px;color:rgba(255,255,255,.9)}
+    .teacher{position:relative;z-index:1;align-self:flex-end;margin-top:34px;width:154px;text-align:center}.avatar{width:108px;height:108px;margin:auto;border-radius:50%;display:grid;place-items:center;font-size:54px;background:linear-gradient(145deg,#fff,#e8ebff);border:5px solid rgba(255,255,255,.55);box-shadow:0 13px 30px rgba(31,37,101,.25)}.teacher small{display:inline-block;margin-top:-6px;padding:5px 12px;border-radius:20px;background:#fff;color:#5c56bd;font-weight:800;box-shadow:0 7px 18px rgba(34,39,98,.18)}
+    .scroll{margin-top:28px;font-size:13px;color:rgba(255,255,255,.76)}
+    .card{position:relative;margin:18px 0;padding:27px 22px;border-radius:25px;background:rgba(255,255,255,.94);border:1px solid rgba(217,225,250,.9);box-shadow:var(--shadow);overflow:hidden}.num{display:inline-grid;place-items:center;width:34px;height:34px;border-radius:11px;color:#fff;background:linear-gradient(135deg,var(--blue),var(--purple));font-weight:900;box-shadow:0 8px 16px rgba(91,99,207,.22)}h2{margin:14px 0 8px;font-size:26px;line-height:1.28}h3{margin:0 0 5px;font-size:18px}.lead{margin:0 0 20px;color:var(--muted);font-size:15px}.big{font-size:28px;font-weight:900;line-height:1.35;background:linear-gradient(90deg,#3f70df,#8a61d7);color:transparent;background-clip:text;-webkit-background-clip:text}
+    .timeline{position:relative;margin-top:25px;padding-left:24px}.timeline:before{content:"";position:absolute;left:7px;top:7px;bottom:7px;width:3px;border-radius:3px;background:linear-gradient(#5e80e8,#a56bd5)}.step{position:relative;margin:0 0 25px}.step:last-child{margin-bottom:0}.step:before{content:"";position:absolute;left:-23px;top:7px;width:11px;height:11px;border-radius:50%;background:#fff;border:3px solid #6a77df}.step p,.mini p{margin:4px 0;color:var(--muted);font-size:14px}
+    .grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}.mini{padding:17px 15px;border-radius:18px;background:linear-gradient(145deg,#f7f9ff,#eef1ff);border:1px solid #e2e8ff}.icon{font-size:27px}.full{grid-column:1/-1}.warm{background:linear-gradient(145deg,#fffaf0,#fff4d7);border-color:#f7e5ac}.quote{margin:22px 0 0;padding:18px;border-left:4px solid #7f66db;border-radius:4px 16px 16px 4px;background:#f3f1ff;font-weight:700}
+    .compare{display:grid;grid-template-columns:1fr 42px 1fr;align-items:stretch;margin:20px 0}.compare>div:not(.arrow){padding:17px 12px;border-radius:18px;background:#f2f5ff;text-align:center}.compare b{display:block;margin:7px 0}.compare small{color:var(--muted)}.arrow{display:grid;place-items:center;font-size:22px;color:#7065d7}
+    .code{margin:18px 0;padding:18px;border-radius:18px;background:#20294b;color:#ecf1ff;font:14px/1.7 ui-monospace,SFMono-Regular,Consolas,monospace;box-shadow:inset 0 1px rgba(255,255,255,.08)}.code em{color:#a9c9ff;font-style:normal}.code strong{color:#ffe6a1}.result{padding:13px;border-radius:14px;background:#edf9f5;color:#276b58;text-align:center;font-weight:800}
+    .pillrow{display:flex;flex-wrap:wrap;gap:9px}.pill{padding:7px 12px;border-radius:999px;background:#eef2ff;color:#4b5ab4;font-size:13px;font-weight:700}.route{display:flex;flex-direction:column;align-items:center;gap:7px;margin-top:20px}.route div{width:100%;padding:16px;border-radius:18px;text-align:center;background:#f3f5ff;border:1px solid #e2e7ff}.route .now{color:#fff;background:linear-gradient(120deg,#5076e5,#8063d9);box-shadow:0 10px 24px rgba(76,87,194,.22)}.route span{color:#8d75df;font-weight:900}
+    .closing{text-align:center;padding-top:34px;padding-bottom:34px;background:linear-gradient(145deg,#4a70dc,#7c61d8);color:#fff}.closing h2{font-size:29px}.closing p{color:rgba(255,255,255,.87)}.heart{font-size:39px}.signature{margin-top:22px;font-weight:800}.note{font-size:12px;color:#8992ae;text-align:center;margin-top:18px}
+    .reveal{opacity:0;transform:translateY(16px);transition:.65s ease}.reveal.show{opacity:1;transform:none}
+    @media(max-width:370px){.wrap{padding-left:13px;padding-right:13px}.hero{margin-left:-13px;margin-right:-13px;padding-left:19px;padding-right:19px}.card{padding:23px 17px}.grid{grid-template-columns:1fr}.full{grid-column:auto}.hero h1{font-size:34px}.compare{grid-template-columns:1fr}.arrow{height:38px;transform:rotate(90deg)}}
+    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.reveal{opacity:1;transform:none;transition:none}}
+    @media print{body{background:#fff}.progress{display:none}.wrap{width:100%;max-width:720px}.hero{min-height:auto;padding-top:50px}.card{break-inside:avoid;box-shadow:none}}
+  </style>
+</head>
+<body>
+  <div class="progress"><i id="bar"></i></div>
+  <main class="wrap">
+    <section class="hero">
+      <div class="eyebrow">S3 阶段成长回顾</div>
+      <h1>陪伴成长一年半<span>宝贝的编程进阶之路</span></h1>
+      <p>从兴趣启蒙，到能够分析问题、设计方案、完成作品——每一步，都值得被看见。</p>
+      <div class="teacher" aria-label="光光老师卡通形象占位">
+        <div class="avatar">👩🏻‍💻</div><small>光光老师 · 卡通形象占位</small>
+      </div>
+      <div class="scroll">向下滑动，打开这份成长记录 ↓</div>
+    </section>
+
+    <section class="card reveal"><span class="num">01</span><h2>一年半，不只是“上了很多课”</h2><p class="lead">更重要的是，孩子已经走过了一条完整的能力进阶路线。</p>
+      <div class="timeline"><div class="step"><h3>兴趣被点亮</h3><p>从认识角色、指令和程序，到愿意主动探索“还能怎么做”。</p></div><div class="step"><h3>思维有了结构</h3><p>逐渐理解顺序、循环、判断和变量，学会有条理地表达想法。</p></div><div class="step"><h3>能力走向综合</h3><p>把不同知识组合起来，分析任务、排查问题、完成更复杂的作品。</p></div></div>
+      <div class="quote">孩子积累的，不只是一件件作品，更是一套面对问题时可以反复使用的思考方法。</div>
+    </section>
+
+    <section class="card reveal"><span class="num">02</span><h2>图形化阶段：从“玩”到“创造”</h2><p class="lead">积木不是简单的拖拖拽拽，它让孩子看得见程序运行的逻辑。</p>
+      <div class="grid"><div class="mini"><div class="icon">🎭</div><h3>角色与动画</h3><p>用指令控制角色，把故事变成可运行的作品。</p></div><div class="mini"><div class="icon">🎮</div><h3>游戏设计</h3><p>设置规则、目标与反馈，从体验者变成创造者。</p></div><div class="mini"><div class="icon">🔁</div><h3>程序逻辑</h3><p>理解循环、条件、变量等编程核心概念。</p></div><div class="mini"><div class="icon">✨</div><h3>表达创意</h3><p>把自己的想法拆成步骤，再让电脑实现出来。</p></div></div>
+    </section>
+
+    <section class="card reveal"><span class="num">03</span><h2>S3：从“完成作品”到“解决问题”</h2><p class="lead">进入 S3 后，学习重点不再只是跟随步骤，而是理解任务背后的方法。</p>
+      <div class="grid"><div class="mini"><div class="icon">🧩</div><h3>拆解任务</h3><p>把复杂目标分成一个个可以完成的小步骤。</p></div><div class="mini"><div class="icon">🔍</div><h3>调试优化</h3><p>发现错误、寻找原因、验证修改，而不是遇错就停。</p></div><div class="mini"><div class="icon">🧠</div><h3>综合运用</h3><p>灵活组合变量、循环、判断、列表、克隆等知识。</p></div><div class="mini"><div class="icon">🚀</div><h3>独立表达</h3><p>开始形成自己的设计思路，让作品有个人想法。</p></div></div>
+    </section>
+
+    <section class="card reveal"><span class="num">04</span><h2>编程带来的，是可迁移的长期能力</h2><div class="grid"><div class="mini warm"><div class="icon">🧠</div><h3>逻辑分析</h3><p>先厘清条件与步骤，再动手解决。</p></div><div class="mini warm"><div class="icon">💡</div><h3>创新创造</h3><p>不只接受答案，也尝试提出自己的方案。</p></div><div class="mini warm"><div class="icon">🛠️</div><h3>解决问题</h3><p>通过测试和调整，让方案逐步变好。</p></div><div class="mini warm"><div class="icon">💪</div><h3>耐心与抗挫</h3><p>把报错看成线索，在尝试中建立韧性。</p></div></div>
+      <div class="quote">这些能力不会只留在编程课堂里，也会慢慢进入孩子的学习方式与成长习惯。</div>
+    </section>
+
+    <section class="card reveal"><span class="num">05</span><h2>赛事，是一次真实的成长检验</h2><p class="lead">AILD、“小小心理学家”等赛事，让孩子经历从学习、训练到现场应用的完整过程。</p>
+      <div class="grid"><div class="mini"><div class="icon">📚</div><h3>赛前学习</h3><p>梳理知识，理解任务。</p></div><div class="mini"><div class="icon">💻</div><h3>专项训练</h3><p>练习应用，发现薄弱点。</p></div><div class="mini"><div class="icon">⏱️</div><h3>现场挑战</h3><p>在真实情境中独立判断。</p></div><div class="mini"><div class="icon">🏅</div><h3>阶段反馈</h3><p>看见积累，也找到下一步方向。</p></div></div>
+      <div class="quote">每一份结果都有价值。金、银、铜奖值得肯定，省三等奖同样是正式且值得认可的成果；结果也不是给孩子贴标签，而是帮助我们更清楚地看见成长。</div>
+    </section>
+
+    <section class="card reveal"><span class="num">06</span><h2>下一站：Python，不是“重新开始”</h2><p class="lead">孩子会更换表达工具，但已经建立的编程思维会完整地带到下一阶段。</p>
+      <div class="compare"><div><div class="icon">🧱</div><b>图形化编程</b><small>拖动积木<br>组织程序逻辑</small></div><div class="arrow">→</div><div><div class="icon">⌨️</div><b>Python</b><small>输入代码<br>表达同样的逻辑</small></div></div>
+      <div class="code"><em># 图形化里的“重复4次”</em><br><strong>for</strong> i <strong>in</strong> range(4):<br>&nbsp;&nbsp;turtle.forward(100)<br>&nbsp;&nbsp;turtle.right(90)</div>
+      <div class="result">同样的循环思维，只是换成了代码表达 → 画出正方形</div>
+      <p class="quote">从“看得见的积木”走向“写得出的代码”，这是能力升级，不是从零起步。</p>
+    </section>
+
+    <section class="card reveal"><span class="num">07</span><h2>Python 不是英语课</h2><p class="lead">家长和孩子最常见的担心是：“英语基础不够，会不会学不会？”</p>
+      <div class="big">不需要大量英语基础。</div><p>Python 里的英文，大多是数量有限、会反复使用的固定指令。孩子需要理解它们在程序里的作用，而不是背长单词、学语法或参加英语考试。</p>
+      <div class="pillrow"><span class="pill">print = 输出</span><span class="pill">if = 如果</span><span class="pill">for = 重复执行</span><span class="pill">list = 列表</span></div>
+      <div class="quote">就像孩子熟悉游戏里的“技能名称”：在一次次使用中，自然记住什么时候用、怎么用。老师也会从读代码、模仿代码，逐步过渡到独立书写。</div>
+    </section>
+
+    <section class="card reveal"><span class="num">08</span><h2>Python 第一学期，会学什么？</h2><p class="lead">从直观、有反馈的项目开始，让孩子在“代码真的能创造东西”中建立信心。</p>
+      <div class="timeline"><div class="step"><h3>代码基础与规范</h3><p>认识运行方式，学会正确输入、阅读和修改代码。</p></div><div class="step"><h3>运算与变量</h3><p>让程序能够计算、记录数据，并根据数据产生变化。</p></div><div class="step"><h3>判断与循环</h3><p>让程序根据条件作出选择，自动完成重复任务。</p></div><div class="step"><h3>turtle 创意绘图</h3><p>用代码控制“小海龟”画图，在即时反馈中理解坐标与循环。</p></div><div class="step"><h3>列表与综合项目</h3><p>管理多组数据，把知识组合起来完成更完整的作品。</p></div></div>
+    </section>
+
+    <section class="card reveal"><span class="num">09</span><h2>为什么现在进入 Python 最合适？</h2><div class="grid"><div class="mini full"><h3>① 思维基础已经建立</h3><p>孩子理解了变量、循环、判断等核心概念，现在可以把这些逻辑迁移到代码中。</p></div><div class="mini full"><h3>② 从“低门槛兴趣”走向“真实代码能力”</h3><p>图形化保护了早期兴趣，Python 则进一步训练准确表达、阅读代码和独立调试。</p></div><div class="mini full"><h3>③ 难度衔接更自然</h3><p>现在升级，旧知识还熟悉，老师可以用熟悉的项目作桥梁，降低畏难感。</p></div></div>
+      <div class="quote">过早进入代码，容易因输入与语法受挫；一直停留在图形化，又会错过能力升级。完成 S3 后衔接 Python，正是承上启下的好时机。</div>
+    </section>
+
+    <section class="card reveal"><span class="num">10</span><h2>一条持续向上的学习路线</h2><p class="lead">每个阶段都有自己的价值，也都在为下一阶段搭桥。</p>
+      <div class="route"><div>图形化编程<br><small>建立兴趣与编程思维</small></div><span>↓</span><div class="now">Python 代码编程<br><small>掌握代码表达与综合应用</small></div><span>↓</span><div>C++ 基础<br><small>走向更严谨的算法思维</small></div><span>↓</span><div>算法竞赛 / 科创方向<br><small>在更广阔的场景里应用能力</small></div></div>
+      <p class="note">学习路线会根据孩子的基础、兴趣和实际成长节奏稳步推进。</p>
+    </section>
+
+    <section class="card closing reveal"><div class="heart">💜</div><h2>谢谢每一位孩子的坚持<br>也谢谢每一位家长的陪伴</h2><p>一年半是值得珍藏的成长，也是下一段旅程的起点。让我们继续陪伴孩子，把兴趣变成能力，把能力变成面向未来的底气。</p><div class="signature">—— 光光老师</div></section>
+  </main>
+  <script>
+    const cards=document.querySelectorAll('.reveal');
+    const observer=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('show');observer.unobserve(e.target)}}),{threshold:.08});
+    cards.forEach(x=>observer.observe(x));
+    const bar=document.getElementById('bar');
+    addEventListener('scroll',()=>{const h=document.documentElement;bar.style.width=(h.scrollTop/(h.scrollHeight-h.clientHeight)*100)+'%'},{passive:true});
+  </script>
+</body>
+</html>
